@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Products - Ethereal Elegance</title>
+    <style>
+        .content h3 {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 28px;
+        }
+        
+        .content p1 {
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 20px;
+        }
+        
+        h2 {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        
+        body {
+            background-image: url('img/download.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        
+        .cart-count {
+            background-color: #ff0000;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 50%;
+            font-size: 12px;
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            display: none;
+        }
+        
+        .cart-count.show {
+            display: block;
+        }
+        
+        .product-card {
+            position: relative;
+        }
+        
+        .cart-icon {
+            font-size: 20px;
+            cursor: pointer;
+        }
+        
+        .product-details {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .add-to-cart {
+            font-size: 20px;
+            cursor: pointer;
+        }
+        /* Stiluri pentru coșul de cumpărături */
+        
+        #cart-container {
+            position: fixed;
+            top: 100px;
+            /* Ajustează poziția la distanță de bara de navigare */
+            right: 20px;
+            background-color: rgb(194, 194, 160);
+            /* Schimbă culoarea la galben */
+            padding: 20px;
+            border: 2px solid #ccc;
+            max-width: 300px;
+            display: none;
+        }
+        
+        #cart-container.show {
+            display: block;
+        }
+        
+        #cart-items {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        #cart-items li {
+            margin-bottom: 10px;
+        }
+        /* Stiluri pentru butonul Buy */
+        
+        #buy-button {
+            display: block;
+            width: 100%;
+            background-color: #f4f3ee;
+            /* Galben */
+            color: black;
+            /* Culorea textului */
+            font-size: 18px;
+            padding: 10px 0;
+            /* Adaugă spațiu deasupra și dedesubtul butonului */
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+            /* Adaugă o mică margine deasupra butonului */
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            <a href="#">Ethereal <span>Elegance</span></a>
+        </div>
+        <input type="text" id="search" placeholder="Search products...">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li id="cart-icon"><a href="#">🛒</a></li>
+            </ul>
+        </nav>
+        <div id="cart-count" class="cart-count"></div>
+    </header>
+
+    <div class="content">
+        <h2>Our Products</h2>
+        <p>Explore our exquisite collection of fine jewelry.</p>
+        <div class="products" id="products">
+            <div class="product-row">
+                <div class="product-card">
+                    <img src="img/pearl-necklace.jpeg" alt="Pearl Necklace" style="width: 250px;">
+                    <h3>Pearl Necklace</h3>
+                    <p>Description: Timeless pearl necklace featuring lustrous pearls hand-knotted on silk thread.</p>
+                    <p1>Price: $800</p1>
+                    <div class="add-to-cart" data-name="Pearl Necklace" data-price="800">🛒</div>
+                </div>
+
+
+                <div class="product-card">
+                    <img src="img/ruby-bracelet.jpeg" alt="Ruby Bracelet" style="width: 250px;">
+                    <h3>Ruby Bracelet</h3>
+                    <p>Description: Exquisite ruby bracelet adorned with rich red rubies set in 14k rose gold.</p>
+                    <p1>Price: $2,800</p1>
+                    <div class="add-to-cart" data-name="Ruby Bracelet" data-price="2800">🛒</div>
+                </div>
+
+                <div class="product-card">
+                    <img src="img/gold-bracelet.jpeg" alt="Gold Bracelet" style="width: 250px;">
+                    <h3>Gold Bracelet</h3>
+                    <p>Description: Elegant gold bracelet crafted with intricate designs and adorned with gemstones.</p>
+                    <p1>Price: $1,200</p1>
+                    <div class="add-to-cart" data-name="Gold Bracelet" data-price="1200">🛒</div>
+                </div>
+            </div>
+            <div class="product-row">
+                <div class="product-card">
+                    <img src="img/diamond-earrings.jpeg" alt="Diamond Earrings" style="width: 250px">
+                    <h3>Diamond Earrings</h3>
+                    <p>Description: Stunning diamond earrings crafted with 18k gold settings.</p>
+                    <p1>Price: $2,500</p1>
+                    <div class="add-to-cart" data-name="Diamond Earrings" data-price="2500">🛒</div>
+                </div>
+
+                <div class="product-card">
+                    <img src="img/sapphire-pendant.jpeg" alt="Sapphire Pendant" style="width: 250px;">
+                    <h3>Sapphire Pendant</h3>
+                    <p>Description: Elegant sapphire pendant featuring a deep blue sapphire stone set in sterling silver.</p>
+                    <p1>Price: $1,200</p1>
+                    <div class="add-to-cart" data-name="Sapphire Pendant" data-price="1200">🛒</div>
+                </div>
+
+                <div class="product-card">
+                    <img src="img/emerald-ring.jpeg" alt="Emerald Ring" style="width: 250px;">
+                    <h3>Emerald Ring</h3>
+                    <p>Description: Classic emerald ring with a vibrant green emerald gemstone surrounded by sparkling diamonds.</p>
+                    <p1>Price: $3,000</p1>
+                    <div class="add-to-cart" data-name="Emerald Ring" data-price="3000">🛒</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="cart-container">
+        <h2>Shopping Cart</h2>
+        <ul id="cart-items">
+        </ul>
+        <button id="buy-button">Buy</button>
+    </div>
+
+    <script>
+        const searchInput = document.getElementById('search');
+        searchInput.addEventListener('input', function() {
+            const searchTerm = searchInput.value.toLowerCase();
+            const productCards = document.querySelectorAll('.product-card');
+            productCards.forEach(card => {
+                const title = card.querySelector('h3').textContent.toLowerCase();
+                const description = card.querySelector('p').textContent.toLowerCase();
+                if (title.includes(searchTerm) || description.includes(searchTerm)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+        const addToCartButtons = document.querySelectorAll('.add-to-cart');
+        const cartCount = document.getElementById('cart-count');
+        const cartContainer = document.getElementById('cart-container');
+        const cartItemsList = document.getElementById('cart-items');
+        let cartItemsCount = 0;
+        const cartItems = {};
+        document.getElementById('cart-icon').addEventListener('click', () => {
+            if (cartContainer.style.display === 'none') {
+                cartContainer.style.display = 'block';
+            } else {
+                cartContainer.style.display = 'none';
+            }
+        });
+        addToCartButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const name = button.getAttribute('data-name');
+                const price = parseInt(button.getAttribute('data-price'));
+                if (cartItems.hasOwnProperty(name)) {
+                    cartItems[name].quantity++;
+                    cartItems[name].totalPrice += price;
+                } else {
+                    cartItems[name] = {
+                        quantity: 1,
+                        totalPrice: price
+                    };
+                }
+                cartItemsCount++;
+                cartCount.textContent = cartItemsCount;
+                cartCount.classList.add('show');
+                renderCartItems();
+            });
+        });
+
+        function renderCartItems() {
+            cartItemsList.innerHTML = '';
+            for (const itemName in cartItems) {
+                if (cartItems.hasOwnProperty(itemName)) {
+                    const item = cartItems[itemName];
+                    const listItem = document.createElement('li');
+                    listItem.textContent = `${itemName} x ${item.quantity} - Total: $${item.totalPrice}`;
+                    cartItemsList.appendChild(listItem);
+                }
+            }
+        }
+
+        function removeItemFromCart(name) {
+            cartItemsCount -= cartItems[name].quantity;
+            delete cartItems[name];
+            cartCount.textContent = cartItemsCount;
+            renderCartItems();
+        }
+
+        function renderCartItems() {
+            cartItemsList.innerHTML = '';
+            for (const itemName in cartItems) {
+                if (cartItems.hasOwnProperty(itemName)) {
+                    const item = cartItems[itemName];
+                    const listItem = document.createElement('li');
+                    listItem.textContent = `${itemName} x ${item.quantity} - Total: $${item.totalPrice}`;
+                    const removeButton = document.createElement('button');
+                    removeButton.textContent = '🗑️';
+                    removeButton.addEventListener('click', () => {
+                        removeItemFromCart(itemName);
+                    });
+                    listItem.appendChild(removeButton);
+                    cartItemsList.appendChild(listItem);
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

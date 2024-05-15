@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Contact Us - Ethereal Elegance</title>
+    <style>
+        body {
+            background-image: url('img/download.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        
+        .contact-box2 {
+            margin-top: 50px;
+        }
+        
+        .form-content input[type="email"],
+        .form-content input[type="text"] {
+            width: 80%;
+            outline: none;
+            border: none;
+            border-bottom: 1px solid #030303;
+            padding: 12px 0;
+            margin-bottom: 10px;
+            margin-top: 0px;
+            background: none;
+        }
+        
+        .form-content input[type="email"]:focus,
+        .form-content input[type="text"]:focus {
+            border-bottom: 1px solid #f0e107;
+        }
+        
+        .form-content label {
+            color: #030303;
+        }
+        
+        .form-content {
+            margin-bottom: 20px;
+        }
+        
+        .form-content:last-child {
+            margin-bottom: 0;
+        }
+        
+        .submit-btn {
+            background-color: #030303;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        .submit-btn:hover {
+            background-color: #ff0000;
+        }
+        
+        .contact-box {
+            margin-top: -100px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            <a href="#">Ethereal <span>Elegance</span></a>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="#">🛒</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="content">
+        <h2>Contact Us</h2>
+        <p>Get in touch with Ethereal Elegance for any inquiries or feedback.</p>
+        <div class="contact" id="contact">
+            <div class="contact-box">
+                <div class="contact-image">
+                    <img src="img/bratarici.jpeg" alt="Contact" style="width: 350px">
+                </div>
+            </div>
+            <div class="contact-box">
+                <div class="contact-body">
+                    <form id="contact-form">
+                        <h3>Do you have a problem?</h3>
+                        <div class="form-content">
+                            <input type="email" id="email" required>
+                            <label for="email">Email</label>
+                        </div>
+                        <div class="form-content">
+                            <input type="text" id="problem" required>
+                            <label for="problem">Name of the problem</label>
+                        </div>
+                        <div class="form-content">
+                            <input type="text" id="description" required>
+                            <label for="description">Description</label>
+                        </div>
+                        <button type="submit" class="submit-btn">Send</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <form>
+            <div class="contact-box2">
+                <div class="form-content">
+                    <label for="subscribe"><b><i>Do you want to subscribe to our Newsletter?</i></b></label>
+                </div>
+                <div class="form-content">
+                    <input type="email" id="email1" required>
+                    <label for="email1">Email</label>
+                </div>
+                <div class="form-content">
+                    <input type="checkbox" id="subscribe" name="subscribe">
+                    <label for="subscribe">Subscribe to Newsletter</label>
+                </div>
+                <button type="submit" class="submit-btn">Send</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            const email = document.getElementById('email').value;
+            const problem = document.getElementById('problem').value;
+            const description = document.getElementById('description').value;
+            if (email === '') {
+                document.getElementById('email-error').innerText = 'Please enter your email';
+                event.preventDefault();
+            } else if (!isValidEmail(email)) {
+                document.getElementById('email-error').innerText = 'Please enter a valid email';
+                event.preventDefault();
+            } else {
+                document.getElementById('email-error').innerText = '';
+            }
+
+            if (problem === '') {
+                document.getElementById('problem-error').innerText = 'Please enter the name of the problem';
+                event.preventDefault();
+            } else {
+                document.getElementById('problem-error').innerText = '';
+            }
+
+            if (description === '') {
+                document.getElementById('description-error').innerText = 'Please enter a description';
+                event.preventDefault();
+            } else {
+                document.getElementById('description-error').innerText = '';
+            }
+        });
+
+        function isValidEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+    </script>
+
+</body>
+
+</html>

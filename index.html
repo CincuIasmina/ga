@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Ethereal Elegance</title>
+    <style>
+        body {
+            background-image: url('img/background.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        
+        .content pis {
+            display: block;
+            margin-top: 60px;
+            margin-bottom: 100px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <a href="#">Ethereal<span> Elegance</span></a>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="#">🛒</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="content">
+        <h2>Welcome to Ethereal Elegance!</h2>
+        <p>Explore our exquisite collection of fine jewelry.</p>
+        <div class="jewelry-images">
+            <a href="products.html"><img id="fluturi" src="img/glodish.jpeg" alt="Gold" style="width: 250px"></a>
+            <a href="products.html"><img id="inele" src="img/inele.jpeg" alt="Inele" style="width: 250px"></a>
+            <a href="products.html"><img id="enecklace" src="img/necklace.jpeg" alt="Necklace" style="width: 250px"></a>
+        </div>
+        <pis> As we progress further on our path, our dedication to integrity, innovation, and excellence remains unwavering. We extend a warm invitation to explore our collection and uncover the enchantment of Ethereal Elegance.</pis>
+    </div>
+
+    <script>
+        const images = document.querySelectorAll('.jewelry-images img');
+        const imageAccessCount = {};
+        images.forEach(image => {
+            imageAccessCount[image.id] = 0;
+        });
+
+        function rearrangeImages() {
+            const sortedImages = Object.keys(imageAccessCount).sort((a, b) => imageAccessCount[b] - imageAccessCount[a]);
+            sortedImages.forEach((id, index) => {
+                const image = document.getElementById(id);
+                const parent = image.parentNode;
+                const nextSibling = image.nextElementSibling;
+                const clonedImage = image.cloneNode(true);
+                parent.removeChild(image);
+                if (nextSibling) {
+                    parent.insertBefore(clonedImage, nextSibling);
+                } else {
+                    parent.appendChild(clonedImage);
+                }
+            });
+        }
+
+        images.forEach(image => {
+            image.addEventListener('click', function() {
+                imageAccessCount[image.id]++;
+                rearrangeImages();
+            });
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,319 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: #f9fbfb;
+    color: #000000;
+}
+
+
+/* Header */
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 24px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ffcc00;
+    background-color: #333;
+}
+
+nav ul li a:active {
+    transform: translateY(2px);
+}
+
+
+/* Content */
+
+.content {
+    text-align: center;
+    padding: 50px;
+}
+
+.content h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.content p {
+    font-size: 18px;
+    color: #030302;
+    margin-bottom: 150px;
+}
+
+#search {
+    width: 250px;
+    /* Setează lățimea dorită pentru câmpul de căutare */
+    height: 30px;
+    font-size: 14px;
+}
+
+.jewelry-images {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    margin-bottom: 50px;
+}
+
+.jewelry-images img:first-child {
+    margin-top: -50px;
+    /* Ajustați valoarea pentru a muta elementele mai sus */
+}
+
+.jewelry-images img {
+    width: 250px;
+    height: auto;
+    transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.jewelry-images a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.jewelry-images a:hover img {
+    filter: brightness(80%);
+    transform: scale(1.1);
+}
+
+.product-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+    margin-top: -50px;
+}
+
+.product-card {
+    width: 100%;
+    margin-bottom: 100px;
+    margin-right: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    /* Adaugă umbrire la cardul de produs */
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+}
+
+.product-card img {
+    width: 10px;
+    height: auto;
+    margin-top: 10px;
+}
+
+.product-card p {
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.product-card:hover {
+    /* Redu opacitatea umbrei la trecerea cursorului peste cardul de produs */
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+    /* Opacitate redusă pentru umbra la hover */
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer .logo a {
+    font-size: 24px;
+    text-decoration: none;
+    color: #fff;
+}
+
+.social-media a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 24px;
+    margin-left: 10px;
+}
+
+.social-media a:hover {
+    color: #ccc;
+}
+
+.about-us {
+    display: flex;
+    align-items: center;
+    margin-bottom: 50px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.about-image {
+    width: 50%;
+    height: auto;
+    margin-right: 20px;
+    max-width: 400px;
+    /* Mută imaginea în sus cu 550px */
+}
+
+.about-text {
+    margin-top: 100px;
+    margin-left: 20px;
+    margin-bottom: 300px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: left;
+    padding: 0 20px;
+}
+
+.about-us p {
+    margin-bottom: 20px;
+    /* Ajustează spațiul dintre paragrafe */
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+
+/* Form container */
+
+.contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* Contact box */
+
+.contact-box {
+    width: 50%;
+    margin: 0 auto;
+}
+
+
+/* Contact image */
+
+.contact-image img {
+    width: 100%;
+    height: auto;
+}
+
+
+/* Contact form body */
+
+.contact-body {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+
+/* Stilizare pentru caseta de text */
+
+.form-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.form-content input[type="text"] {
+    width: 100%;
+    /* Lățimea va fi setată la 100% */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    /* Asigură ca padding-ul și border-ul să fie incluse în lățime */
+}
+
+
+/* Stilizare pentru mesajele de eroare */
+
+.error-message {
+    color: red;
+    font-size: 12px;
+    position: absolute;
+    bottom: -20px;
+}
+
+
+/* Stilizare pentru butonul de submit */
+
+button[type="submit"] {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #555;
+}
+
+.form-content {
+    display: flex;
+    /* Folosește flexbox pentru aliniere */
+    flex-direction: column;
+    /* Așează elementele în coloană */
+    align-items: center;
+    padding: 8px 20px
+}
+
+
+/* Opțional: spațiere între text și checkbox */
+
+.form-content label {
+    margin-right: 10px;
+}
+
+
+/* Stil pentru caseta de selectare */
+
+input[type="checkbox"] {
+    margin-right: 10px;
+    /* Ajustați spațiul între caseta de selectare și etichetă */
+}
+
+
+/* Stil pentru eticheta "Subscribe to Newsletter" */
+
+label[for="subscribe"] {
+    margin-left: 10px;
+    /* Ajustați spațiul între etichetă și caseta de selectare */
+}

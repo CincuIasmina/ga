@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>About Us - Ethereal Elegance</title>
+    <style>
+        body {
+            background-image: url('img/background.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        
+        .gallery-container {
+            width: 50%;
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            margin-top: -90px;
+        }
+        
+        .gallery-image {
+            max-width: 100%;
+            height: auto;
+            transition: transform 0.5s ease;
+        }
+        
+        .gallery-text {
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .gallery-controls {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            padding: 0 20px;
+        }
+        
+        .gallery-controls button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 24px;
+            color: white;
+            outline: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            <a href="#">Ethereal <span>Elegance</span></a>
+        </div>
+
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="#">🛒</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <div class="content">
+        <h2>About Us</h2>
+        <div class="about-us">
+            <div class="gallery-container">
+                <div class="image-text-container">
+                    <img class="gallery-image" src="img/gold.jpeg" alt="Gold">
+                    <div class="gallery-text">
+                        <h3>Our Inspiration</h3>
+                        <p>Discover the beauty and elegance behind Ethereal Elegance.</p>
+                    </div>
+                </div>
+                <div class="gallery-controls">
+                    <button id="prevBtn" onclick="prevImage()">&#10094;</button>
+                    <button id="nextBtn" onclick="nextImage()">&#10095;</button>
+                </div>
+            </div>
+            <div class="about-text">
+                <p>Ethereal Elegance was founded with a simple yet profound idea: to create jewelry that celebrates the beauty of life's most precious moments. Inspired by the timeless allure of nature and the transformative power of jewelry, we set out
+                    to craft pieces that capture the essence of elegance and sophistication.</p>
+                <p>Our mission is to bring a touch of magic into the lives of our customers, offering them more than just jewelry, but a symbol of enduring love, cherished memories, and timeless beauty. Each piece in our collection is meticulously handcrafted
+                    using only the finest materials ethically sourced from around the world.</p>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script>
+        const images = [
+            "img/gold.jpeg",
+            "img/toate.jpeg"
+        ];
+        let currentIndex = 0;
+
+        function nextImage() {
+            currentIndex++;
+            if (currentIndex >= images.length) {
+                currentIndex = 0;
+            }
+            displayImage();
+        }
+
+        function prevImage() {
+            currentIndex--;
+            if (currentIndex < 0) {
+                currentIndex = images.length - 1;
+            }
+            displayImage();
+        }
+
+        function displayImage() {
+            const image = document.querySelector('.gallery-image');
+            image.src = images[currentIndex];
+        }
+    </script>
+
+</body>
+
+</html>
